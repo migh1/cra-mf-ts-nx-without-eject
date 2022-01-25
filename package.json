@@ -1,18 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "start": "lerna run --scope @cra-mfe/* --parallel start",
-    "build": "lerna run --scope @cra-mfe/* build",
-    "serve": "lerna run --scope @cra-mfe/* --parallel serve",
-    "clean": "lerna run --scope @cra-mfe/* --parallel clean"
+    "start": "nx run-many --target=start --all --parallel",
+    "test": "nx run-many --target=test --all --parallel",
+    "build": "nx run-many --target=build --all --parallel",
+    "serve": "nx run-many --target=serve --all --parallel",
+    "clean": "nx run-many --target=clean --all --parallel"
   },
   "devDependencies": {
-    "lerna": "3.22.1"
-  },
-  "workspaces": {
-    "packages": [
-      "host",
-      "app1"
-    ]
+    "@nrwl/cli": "latest",
+    "@nrwl/tao": "latest",
+    "@nrwl/workspace": "latest",
+    "typescript": "4.2.4"
   }
 }
